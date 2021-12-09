@@ -1,14 +1,14 @@
 {
-    "clowns": [
-        {
-            "id": 1,
-            "name": "Lollipop"
-        },
-        {
-            "id": 2,
-            "name": "Buttons"
-        }
-    ],
-    "completions": [],
-    "reservations": []
+  "clowns": [
+    {
+      "id": 1,
+      "name": "Lollipop"
+    },
+    {
+      "id": 2,
+      "name": "Buttons"
+    }
+  ],
+  "completions": [],
+  "reservations": []
 }

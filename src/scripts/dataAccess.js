@@ -23,3 +23,9 @@ export const sendRequest = (userServiceRequest) => {
         .then((res) => res.json())
         .then(() => mainContainer.dispatchEvent(new CustomEvent("stateChanged")));
 };
+
+export const denyButton = (id) => {
+    fetch(`${API}/reservations/${id}`, { method: "DELETE" }).then(() =>
+        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+    );
+};
