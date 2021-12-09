@@ -1,5 +1,15 @@
-const API = "http://localhost:8088";
+export const API = "http://localhost:8088";
 const mainContainer = document.querySelector("#container");
+const appState = { reservations: [] };
+
+export const getReservations = () => appState.reservations.map((reservation) => ({ ...reservation }));
+export const fetchState = () => {
+    return fetch(`${API}/reservations`)
+        .then((res) => res.json())
+        .then((reservationsList) => {
+            appState.reservations = reservationsList;
+        });
+};
 
 export const sendRequest = (userServiceRequest) => {
     const requestPost = {
@@ -9,7 +19,7 @@ export const sendRequest = (userServiceRequest) => {
         },
         body: JSON.stringify(userServiceRequest),
     };
-    return fetch(`${API}/requests`, requestPost)
+    return fetch(`${API}/reservations`, requestPost)
         .then((res) => res.json())
-        .then(() => mainContainer.dispatchEvent(new CustomEvent("stateChangeed")));
+        .then(() => mainContainer.dispatchEvent(new CustomEvent("stateChanged")));
 };

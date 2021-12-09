@@ -1,4 +1,4 @@
-import { Requests } from "./Requests.js";
+import { Reservations } from "./Reservations.js";
 import { Form } from "./Form.js";
 
 export const ClownRental = () => {
@@ -10,7 +10,7 @@ export const ClownRental = () => {
      </article>
      <article>
         <section class="requests">
-            ${Requests()}
+            ${Reservations()}
         </section>
     </article>`;
 };
