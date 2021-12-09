@@ -1,0 +1,36 @@
+@import url("https://fontlibrary.org//face/rich-eatin");
+
+body {
+    background-color: aqua;
+}
+
+h1 {
+    font-family: "RichEatinAllCaps";
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5em;
+}
+
+.button {
+    margin: 1em;
+    width: 100px;
+    border-radius: 12px;
+    background-color: tomato;
+    color: white;
+}

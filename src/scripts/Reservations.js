@@ -6,7 +6,7 @@ export const Reservations = () => {
     html += resList.map(
         (reservation) => `<li value="reservation" id="${reservation.id}">
     ${reservation.parentName} with a party of ${reservation.numChildren} has requested ${reservation.hours} hours of your time on ${reservation.partyDate}.
-    <button class="deny" id="deny--${reservation.id}">Deny</button>
+    <button class="deny button" id="deny--${reservation.id}">Deny</button>
     </li>`
     );
     html += "</ul>";
