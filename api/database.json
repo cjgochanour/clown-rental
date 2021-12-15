@@ -1,14 +1,24 @@
 {
-  "clowns": [
-    {
-      "id": 1,
-      "name": "Lollipop"
-    },
-    {
-      "id": 2,
-      "name": "Buttons"
-    }
-  ],
-  "completions": [],
-  "reservations": []
+    "clowns": [
+        {
+            "id": 1,
+            "name": "Lollipop"
+        },
+        {
+            "id": 2,
+            "name": "Buttons"
+        }
+    ],
+    "completions": [],
+    "reservations": [
+        {
+            "parentName": "Jack",
+            "childName": "Diane",
+            "numChildren": "2",
+            "address": "Heartland, USA",
+            "partyDate": "2023-02-24",
+            "hours": "8",
+            "id": 1
+        }
+    ]
 }

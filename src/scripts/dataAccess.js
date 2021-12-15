@@ -1,6 +1,6 @@
 export const API = "http://localhost:8088";
 const mainContainer = document.querySelector("#container");
-const appState = { reservations: [] };
+const appState = { reservations: [], clowns: [] };
 
 export const getReservations = () => appState.reservations.map((reservation) => ({ ...reservation }));
 export const fetchState = () => {
@@ -10,6 +10,13 @@ export const fetchState = () => {
             appState.reservations = reservationsList;
         });
 };
+
+export const fetchClowns = () => {
+    return fetch(`${API}/clowns`)
+        .then((res) => res.json())
+        .then((res) => (appState.clowns = res));
+};
+export const getClowns = () => appState.clowns.map((clown) => ({ ...clown }));
 
 export const sendRequest = (userServiceRequest) => {
     const requestPost = {
@@ -26,6 +33,17 @@ export const sendRequest = (userServiceRequest) => {
 
 export const denyButton = (id) => {
     fetch(`${API}/reservations/${id}`, { method: "DELETE" }).then(() =>
+        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+    );
+};
+
+export const applyClown = (completionObject) => {
+    const completionPost = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(completionObject),
+    };
+    return fetch(`${API}/completions`, completionPost).then(() =>
         mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
     );
 };
